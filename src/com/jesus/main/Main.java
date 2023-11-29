@@ -22,7 +22,7 @@ public class Main {
 			UIManager.put("TextComponent.arc", 10);
 			UIManager.put("Label.arc", 10);
 			UIManager.put( "Component.innerFocusWidth", 1 );
-			UIManager.put("Component.focusWidth", 1);
+			UIManager.put("Component.focusWidth", 0);
 			UIManager.put("Component.borderColor", new Color(71, 97, 75));
 			UIManager.put("Component.selectionBackground", new Color(71, 97, 75));
 			FlatGitHubIJTheme.setup();

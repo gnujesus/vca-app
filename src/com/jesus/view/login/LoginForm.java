@@ -49,8 +49,8 @@ public class LoginForm extends javax.swing.JFrame {
     jpnWelcomePane = new javax.swing.JPanel();
     panelCover2 = new com.jesus.view.components.PanelCover();
     lblWelcomeBack = new javax.swing.JLabel();
-    btnRegisterNewUser = new javax.swing.JButton();
     jLabel1 = new javax.swing.JLabel();
+    btnRegisterNewUser = new javax.swing.JButton();
     jLabel3 = new javax.swing.JLabel();
     jpnLoginPane = new javax.swing.JPanel();
     lblEmail = new javax.swing.JLabel();
@@ -74,21 +74,22 @@ public class LoginForm extends javax.swing.JFrame {
     lblWelcomeBack.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
     lblWelcomeBack.setText("Welcome back!");
 
+    jLabel1.setFont(new java.awt.Font("Carlito", 0, 14)); // NOI18N
+    jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+    jLabel1.setText(" Welcome back to the Vehicle Counting Assistant");
+    jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
     btnRegisterNewUser.setBackground(new java.awt.Color(0, 100, 54));
     btnRegisterNewUser.setFont(new java.awt.Font("Carlito", 0, 18)); // NOI18N
     btnRegisterNewUser.setForeground(new java.awt.Color(255, 255, 255));
     btnRegisterNewUser.setText("Register new user");
     btnRegisterNewUser.setBorderPainted(false);
+    btnRegisterNewUser.setContentAreaFilled(false);
     btnRegisterNewUser.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
         btnRegisterNewUserActionPerformed(evt);
       }
     });
-
-    jLabel1.setFont(new java.awt.Font("Carlito", 0, 14)); // NOI18N
-    jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-    jLabel1.setText(" Welcome back to the Vehicle Counting Assistant");
-    jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
     jLabel3.setFont(new java.awt.Font("Carlito", 0, 14)); // NOI18N
     jLabel3.setForeground(new java.awt.Color(255, 255, 255));

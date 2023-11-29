@@ -81,6 +81,8 @@ public class RegisterForm extends javax.swing.JFrame {
     btnHaveAnAccount.setForeground(new java.awt.Color(255, 255, 255));
     btnHaveAnAccount.setText("I already have an account");
     btnHaveAnAccount.setBorderPainted(false);
+    btnHaveAnAccount.setContentAreaFilled(false);
+    btnHaveAnAccount.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
     btnHaveAnAccount.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
         btnHaveAnAccountActionPerformed(evt);
