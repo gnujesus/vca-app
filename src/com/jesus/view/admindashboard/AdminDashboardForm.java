@@ -7,6 +7,7 @@ package com.jesus.view.admindashboard;
 import com.jesus.view.components.PieChart;
 import com.jesus.view.login.LoginForm;
 import com.jesus.view.new_vehicle_count.NewVehicleFormPageOne;
+import com.jesus.view.userapp.UserAppForm;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
@@ -210,6 +211,11 @@ public class AdminDashboardForm extends javax.swing.JFrame {
     btnModoAforador.setBorderPainted(false);
     btnModoAforador.setContentAreaFilled(false);
     btnModoAforador.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+    btnModoAforador.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnModoAforadorActionPerformed(evt);
+      }
+    });
     pcLeftMenuCover.add(btnModoAforador, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 200, 40));
 
     lblInTransitText.setBackground(new java.awt.Color(255, 255, 255));
@@ -415,6 +421,12 @@ public class AdminDashboardForm extends javax.swing.JFrame {
 		NewVehicleFormPageOne newVehicleForm = new NewVehicleFormPageOne();
 		newVehicleForm.setVisible(true);
   }//GEN-LAST:event_btnCreateNewAforumActionPerformed
+
+  private void btnModoAforadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModoAforadorActionPerformed
+    // TODO add your handling code here:
+		UserAppForm userAppForm = new UserAppForm();
+		userAppForm.setVisible(true);
+  }//GEN-LAST:event_btnModoAforadorActionPerformed
 
 	/**
 	 * @param args the command line arguments

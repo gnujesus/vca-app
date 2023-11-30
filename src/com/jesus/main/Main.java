@@ -35,8 +35,8 @@ public class Main {
 	}
 
 	public static void run(){
-		RegisterForm registerFrame = new RegisterForm();
-		registerFrame.setVisible(true);
+		LoginForm loginForm = new LoginForm();
+		loginForm.setVisible(true);
 	}
 }
 
