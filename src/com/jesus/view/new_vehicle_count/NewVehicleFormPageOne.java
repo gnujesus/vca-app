@@ -53,6 +53,9 @@ public class NewVehicleFormPageOne extends javax.swing.JFrame {
     jTextField4.setForeground(new java.awt.Color(1, 16, 1));
     jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 350, 30));
 
+    btnNext.setBackground(new java.awt.Color(20, 175, 113));
+    btnNext.setFont(new java.awt.Font("Carlito", 0, 18)); // NOI18N
+    btnNext.setForeground(new java.awt.Color(255, 255, 255));
     btnNext.setText("Siguiente");
     btnNext.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {

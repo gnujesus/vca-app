@@ -59,6 +59,9 @@ public class NewVehicleFormPageTwo extends javax.swing.JFrame {
     txtCountStartingTime.setForeground(new java.awt.Color(1, 16, 1));
     jPanel1.add(txtCountStartingTime, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 220, 30));
 
+    btnCreate.setBackground(new java.awt.Color(20, 175, 113));
+    btnCreate.setFont(new java.awt.Font("Carlito", 0, 18)); // NOI18N
+    btnCreate.setForeground(new java.awt.Color(255, 255, 255));
     btnCreate.setText("Crear");
     btnCreate.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -127,9 +127,9 @@ public class AdminDashboardForm extends javax.swing.JFrame {
     pcLeftMenuCover = new com.jesus.view.components.PanelCover();
     btnAforos = new javax.swing.JButton();
     btnEncuestas = new javax.swing.JButton();
-    btnLogout = new javax.swing.JButton();
     btnModoAforador = new javax.swing.JButton();
     lblInTransitText = new javax.swing.JLabel();
+    btnLogout = new javax.swing.JButton();
     lblInTransitT = new javax.swing.JLabel();
     lblUserOptions = new javax.swing.JLabel();
     btnLogout1 = new javax.swing.JButton();
@@ -163,8 +163,9 @@ public class AdminDashboardForm extends javax.swing.JFrame {
     btnAforos.setBorderPainted(false);
     btnAforos.setContentAreaFilled(false);
     btnAforos.setEnabled(false);
+    btnAforos.setFocusPainted(false);
+    btnAforos.setFocusable(false);
     btnAforos.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-    btnAforos.setSelected(true);
     btnAforos.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
         btnAforosActionPerformed(evt);
@@ -188,21 +189,6 @@ public class AdminDashboardForm extends javax.swing.JFrame {
     });
     pcLeftMenuCover.add(btnEncuestas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 200, 40));
 
-    btnLogout.setBackground(new java.awt.Color(25, 110, 69));
-    btnLogout.setFont(new java.awt.Font("Carlito", 0, 18)); // NOI18N
-    btnLogout.setForeground(new java.awt.Color(255, 255, 255));
-    btnLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/jesus/assets/logout.png"))); // NOI18N
-    btnLogout.setText(" Logout");
-    btnLogout.setBorderPainted(false);
-    btnLogout.setContentAreaFilled(false);
-    btnLogout.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-    btnLogout.addActionListener(new java.awt.event.ActionListener() {
-      public void actionPerformed(java.awt.event.ActionEvent evt) {
-        btnLogoutActionPerformed(evt);
-      }
-    });
-    pcLeftMenuCover.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 200, 40));
-
     btnModoAforador.setBackground(new java.awt.Color(25, 110, 69));
     btnModoAforador.setFont(new java.awt.Font("Carlito", 0, 18)); // NOI18N
     btnModoAforador.setForeground(new java.awt.Color(255, 255, 255));
@@ -224,6 +210,21 @@ public class AdminDashboardForm extends javax.swing.JFrame {
     lblInTransitText.setText("In  ransit");
     lblInTransitText.setToolTipText("");
     pcLeftMenuCover.add(lblInTransitText, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, 30));
+
+    btnLogout.setBackground(new java.awt.Color(25, 110, 69));
+    btnLogout.setFont(new java.awt.Font("Carlito", 0, 18)); // NOI18N
+    btnLogout.setForeground(new java.awt.Color(255, 255, 255));
+    btnLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/jesus/assets/logout.png"))); // NOI18N
+    btnLogout.setText(" Logout");
+    btnLogout.setBorderPainted(false);
+    btnLogout.setContentAreaFilled(false);
+    btnLogout.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+    btnLogout.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnLogoutActionPerformed(evt);
+      }
+    });
+    pcLeftMenuCover.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 200, 40));
 
     lblInTransitT.setFont(new java.awt.Font("Caladea", 1, 54)); // NOI18N
     lblInTransitT.setForeground(new java.awt.Color(255, 255, 255));
@@ -283,8 +284,8 @@ public class AdminDashboardForm extends javax.swing.JFrame {
     jpnStatisticsLayout.setHorizontalGroup(
       jpnStatisticsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(jpnStatisticsLayout.createSequentialGroup()
-        .addGap(14, 14, 14)
-        .addComponent(jpnBarChart, javax.swing.GroupLayout.DEFAULT_SIZE, 465, Short.MAX_VALUE)
+        .addContainerGap()
+        .addComponent(jpnBarChart, javax.swing.GroupLayout.PREFERRED_SIZE, 473, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
         .addComponent(jpnPieChart, javax.swing.GroupLayout.DEFAULT_SIZE, 497, Short.MAX_VALUE)
         .addContainerGap())
@@ -330,10 +331,12 @@ public class AdminDashboardForm extends javax.swing.JFrame {
     txtSearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/jesus/assets/magnifying-glass.png"))); // NOI18N
     txtSearch.setText(" Search");
 
-    btnCreateNewAforum.setBackground(new java.awt.Color(255, 255, 255));
-    btnCreateNewAforum.setForeground(new java.awt.Color(0, 0, 0));
-    btnCreateNewAforum.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/jesus/assets/plus.png"))); // NOI18N
-    btnCreateNewAforum.setText("  Nuevo aforo");
+    btnCreateNewAforum.setBackground(new java.awt.Color(20, 175, 113));
+    btnCreateNewAforum.setFont(new java.awt.Font("Carlito", 0, 18)); // NOI18N
+    btnCreateNewAforum.setForeground(new java.awt.Color(255, 255, 255));
+    btnCreateNewAforum.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/jesus/assets/add.png"))); // NOI18N
+    btnCreateNewAforum.setText("      Nuevo aforo");
+    btnCreateNewAforum.setBorderPainted(false);
     btnCreateNewAforum.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
         btnCreateNewAforumActionPerformed(evt);
@@ -347,13 +350,13 @@ public class AdminDashboardForm extends javax.swing.JFrame {
       .addGroup(jpnTableLayout.createSequentialGroup()
         .addContainerGap()
         .addGroup(jpnTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-          .addComponent(jScrollPane1)
+          .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 976, Short.MAX_VALUE)
           .addGroup(jpnTableLayout.createSequentialGroup()
             .addGroup(jpnTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
               .addComponent(txtSearch)
               .addComponent(txtSearchBar, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 457, Short.MAX_VALUE)
-            .addComponent(btnCreateNewAforum, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnCreateNewAforum, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)))
         .addContainerGap())
     );
     jpnTableLayout.setVerticalGroup(
@@ -365,10 +368,10 @@ public class AdminDashboardForm extends javax.swing.JFrame {
             .addComponent(txtSearch)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(txtSearchBar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-          .addComponent(btnCreateNewAforum, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addComponent(btnCreateNewAforum, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 298, Short.MAX_VALUE)
-        .addGap(12, 12, 12))
+        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 304, Short.MAX_VALUE)
+        .addContainerGap())
     );
 
     jpnRightPane.add(jpnTable, java.awt.BorderLayout.CENTER);
@@ -414,19 +417,20 @@ public class AdminDashboardForm extends javax.swing.JFrame {
 
   private void btnLogout1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogout1ActionPerformed
     // TODO add your handling code here:
+		JOptionPane.showMessageDialog(null, "This functionality is yet to be done", "YET TO DO", 0);
   }//GEN-LAST:event_btnLogout1ActionPerformed
-
-  private void btnCreateNewAforumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateNewAforumActionPerformed
-    // TODO add your handling code here:
-		NewVehicleFormPageOne newVehicleForm = new NewVehicleFormPageOne();
-		newVehicleForm.setVisible(true);
-  }//GEN-LAST:event_btnCreateNewAforumActionPerformed
 
   private void btnModoAforadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModoAforadorActionPerformed
     // TODO add your handling code here:
 		UserAppForm userAppForm = new UserAppForm();
 		userAppForm.setVisible(true);
   }//GEN-LAST:event_btnModoAforadorActionPerformed
+
+  private void btnCreateNewAforumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateNewAforumActionPerformed
+    // TODO add your handling code here:
+    NewVehicleFormPageOne newVehicleForm = new NewVehicleFormPageOne();
+    newVehicleForm.setVisible(true);
+  }//GEN-LAST:event_btnCreateNewAforumActionPerformed
 
 	/**
 	 * @param args the command line arguments

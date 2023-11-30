@@ -28,36 +28,36 @@ public class UserAppForm extends javax.swing.JFrame {
 
     jPanel1 = new javax.swing.JPanel();
     jPanel2 = new javax.swing.JPanel();
-    jLabel7 = new javax.swing.JLabel();
-    jButton18 = new javax.swing.JButton();
-    jButton19 = new javax.swing.JButton();
-    jButton20 = new javax.swing.JButton();
-    jButton21 = new javax.swing.JButton();
-    jButton22 = new javax.swing.JButton();
+    lblMovement = new javax.swing.JLabel();
+    btnMenu = new javax.swing.JButton();
+    btnStatisticsSection = new javax.swing.JButton();
+    btnAddCount = new javax.swing.JButton();
+    btnCountingSection = new javax.swing.JButton();
+    btnCountedSection = new javax.swing.JButton();
     jPanel3 = new javax.swing.JPanel();
-    jLabel2 = new javax.swing.JLabel();
-    jButton6 = new javax.swing.JButton();
-    jButton7 = new javax.swing.JButton();
-    jTextField1 = new javax.swing.JTextField();
+    lblVehicle = new javax.swing.JLabel();
+    btnAdd = new javax.swing.JButton();
+    btnSubstract = new javax.swing.JButton();
+    txtQuantity = new javax.swing.JTextField();
     jLabel3 = new javax.swing.JLabel();
-    jButton8 = new javax.swing.JButton();
-    jTextField2 = new javax.swing.JTextField();
-    jButton9 = new javax.swing.JButton();
+    txtQuantity2 = new javax.swing.JTextField();
     jLabel4 = new javax.swing.JLabel();
-    jButton10 = new javax.swing.JButton();
-    jTextField3 = new javax.swing.JTextField();
-    jButton11 = new javax.swing.JButton();
+    txtQuantity3 = new javax.swing.JTextField();
     jLabel5 = new javax.swing.JLabel();
-    jButton12 = new javax.swing.JButton();
-    jTextField4 = new javax.swing.JTextField();
-    jButton13 = new javax.swing.JButton();
+    txtQuantity4 = new javax.swing.JTextField();
     jLabel6 = new javax.swing.JLabel();
-    jButton14 = new javax.swing.JButton();
-    jTextField5 = new javax.swing.JTextField();
-    jButton15 = new javax.swing.JButton();
+    txtQuantity5 = new javax.swing.JTextField();
+    btnAdd2 = new javax.swing.JButton();
+    btnSubstract2 = new javax.swing.JButton();
+    btnSubstract3 = new javax.swing.JButton();
+    btnAdd3 = new javax.swing.JButton();
+    btnSubstract4 = new javax.swing.JButton();
+    btnAdd4 = new javax.swing.JButton();
+    btnSubstract5 = new javax.swing.JButton();
+    btnAdd5 = new javax.swing.JButton();
     jPanel4 = new javax.swing.JPanel();
-    jButton16 = new javax.swing.JButton();
-    jButton17 = new javax.swing.JButton();
+    btnNewVehicle = new javax.swing.JButton();
+    btnFinishCount = new javax.swing.JButton();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -67,162 +67,162 @@ public class UserAppForm extends javax.swing.JFrame {
     jPanel2.setBackground(new java.awt.Color(20, 175, 113));
     jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-    jLabel7.setFont(new java.awt.Font("Carlito", 0, 36)); // NOI18N
-    jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-    jLabel7.setText("NS - 1");
-    jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, 90, -1));
+    lblMovement.setFont(new java.awt.Font("Carlito", 0, 36)); // NOI18N
+    lblMovement.setForeground(new java.awt.Color(255, 255, 255));
+    lblMovement.setText("NS - 1");
+    jPanel2.add(lblMovement, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, 90, -1));
 
-    jButton18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/jesus/assets/list.png"))); // NOI18N
-    jButton18.setBorderPainted(false);
-    jButton18.setContentAreaFilled(false);
-    jPanel2.add(jButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, 30));
+    btnMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/jesus/assets/list.png"))); // NOI18N
+    btnMenu.setBorderPainted(false);
+    btnMenu.setContentAreaFilled(false);
+    jPanel2.add(btnMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, 30));
 
-    jButton19.setFont(new java.awt.Font("Carlito", 0, 18)); // NOI18N
-    jButton19.setForeground(new java.awt.Color(255, 255, 255));
-    jButton19.setText("Statistics");
-    jButton19.setBorderPainted(false);
-    jButton19.setContentAreaFilled(false);
-    jPanel2.add(jButton19, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 63, 120, 30));
+    btnStatisticsSection.setFont(new java.awt.Font("Carlito", 0, 18)); // NOI18N
+    btnStatisticsSection.setForeground(new java.awt.Color(255, 255, 255));
+    btnStatisticsSection.setText("Statistics");
+    btnStatisticsSection.setBorderPainted(false);
+    btnStatisticsSection.setContentAreaFilled(false);
+    jPanel2.add(btnStatisticsSection, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 63, 120, 30));
 
-    jButton20.setFont(new java.awt.Font("sansserif", 0, 12)); // NOI18N
-    jButton20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/jesus/assets/add.png"))); // NOI18N
-    jButton20.setBorderPainted(false);
-    jButton20.setContentAreaFilled(false);
-    jButton20.addActionListener(new java.awt.event.ActionListener() {
+    btnAddCount.setFont(new java.awt.Font("sansserif", 0, 12)); // NOI18N
+    btnAddCount.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/jesus/assets/add.png"))); // NOI18N
+    btnAddCount.setBorderPainted(false);
+    btnAddCount.setContentAreaFilled(false);
+    btnAddCount.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
-        jButton20ActionPerformed(evt);
+        btnAddCountActionPerformed(evt);
       }
     });
-    jPanel2.add(jButton20, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, -1, 40));
+    jPanel2.add(btnAddCount, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, -1, 40));
 
-    jButton21.setFont(new java.awt.Font("Carlito", 0, 18)); // NOI18N
-    jButton21.setForeground(new java.awt.Color(255, 255, 255));
-    jButton21.setText("Counting");
-    jButton21.setBorderPainted(false);
-    jButton21.setContentAreaFilled(false);
-    jPanel2.add(jButton21, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 63, 110, 30));
+    btnCountingSection.setFont(new java.awt.Font("Carlito", 0, 18)); // NOI18N
+    btnCountingSection.setForeground(new java.awt.Color(255, 255, 255));
+    btnCountingSection.setText("Counting");
+    btnCountingSection.setBorderPainted(false);
+    btnCountingSection.setContentAreaFilled(false);
+    jPanel2.add(btnCountingSection, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 63, 110, 30));
 
-    jButton22.setFont(new java.awt.Font("Carlito", 0, 18)); // NOI18N
-    jButton22.setForeground(new java.awt.Color(255, 255, 255));
-    jButton22.setText("Counted");
-    jButton22.setBorderPainted(false);
-    jButton22.setContentAreaFilled(false);
-    jPanel2.add(jButton22, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 63, 100, 30));
+    btnCountedSection.setFont(new java.awt.Font("Carlito", 0, 18)); // NOI18N
+    btnCountedSection.setForeground(new java.awt.Color(255, 255, 255));
+    btnCountedSection.setText("Counted");
+    btnCountedSection.setBorderPainted(false);
+    btnCountedSection.setContentAreaFilled(false);
+    jPanel2.add(btnCountedSection, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 63, 100, 30));
 
     jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 370, 100));
 
     jPanel3.setBackground(new java.awt.Color(255, 255, 255));
     jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-    jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/jesus/assets/car(1).png"))); // NOI18N
-    jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, 90));
+    lblVehicle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/jesus/assets/car(1).png"))); // NOI18N
+    jPanel3.add(lblVehicle, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, 90));
 
-    jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/jesus/assets/next(1).png"))); // NOI18N
-    jButton6.setBorderPainted(false);
-    jButton6.setContentAreaFilled(false);
-    jPanel3.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 60, -1, -1));
+    btnAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/jesus/assets/add(1).png"))); // NOI18N
+    btnAdd.setBorderPainted(false);
+    btnAdd.setContentAreaFilled(false);
+    jPanel3.add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 50, 40, 50));
 
-    jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/jesus/assets/back(1).png"))); // NOI18N
-    jButton7.setBorderPainted(false);
-    jButton7.setContentAreaFilled(false);
-    jPanel3.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, -1, -1));
+    btnSubstract.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/jesus/assets/remove.png"))); // NOI18N
+    btnSubstract.setBorderPainted(false);
+    btnSubstract.setContentAreaFilled(false);
+    jPanel3.add(btnSubstract, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, -1, 50));
 
-    jTextField1.setFocusable(false);
-    jTextField1.setRequestFocusEnabled(false);
-    jPanel3.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 100, 30));
+    txtQuantity.setFocusable(false);
+    txtQuantity.setRequestFocusEnabled(false);
+    jPanel3.add(txtQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 100, 30));
 
     jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/jesus/assets/car(1).png"))); // NOI18N
     jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, 90));
 
-    jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/jesus/assets/back(1).png"))); // NOI18N
-    jButton8.setBorderPainted(false);
-    jButton8.setContentAreaFilled(false);
-    jPanel3.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, -1, -1));
-
-    jTextField2.setFocusable(false);
-    jTextField2.setRequestFocusEnabled(false);
-    jPanel3.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 140, 100, 30));
-
-    jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/jesus/assets/next(1).png"))); // NOI18N
-    jButton9.setBorderPainted(false);
-    jButton9.setContentAreaFilled(false);
-    jPanel3.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 140, -1, -1));
+    txtQuantity2.setFocusable(false);
+    txtQuantity2.setRequestFocusEnabled(false);
+    jPanel3.add(txtQuantity2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 140, 100, 30));
 
     jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/jesus/assets/car(1).png"))); // NOI18N
     jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, 90));
 
-    jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/jesus/assets/back(1).png"))); // NOI18N
-    jButton10.setBorderPainted(false);
-    jButton10.setContentAreaFilled(false);
-    jPanel3.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, -1, -1));
-
-    jTextField3.setFocusable(false);
-    jTextField3.setRequestFocusEnabled(false);
-    jPanel3.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, 100, 30));
-
-    jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/jesus/assets/next(1).png"))); // NOI18N
-    jButton11.setBorderPainted(false);
-    jButton11.setContentAreaFilled(false);
-    jPanel3.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 230, -1, -1));
+    txtQuantity3.setFocusable(false);
+    txtQuantity3.setRequestFocusEnabled(false);
+    jPanel3.add(txtQuantity3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, 100, 30));
 
     jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/jesus/assets/car(1).png"))); // NOI18N
     jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, 90));
 
-    jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/jesus/assets/back(1).png"))); // NOI18N
-    jButton12.setBorderPainted(false);
-    jButton12.setContentAreaFilled(false);
-    jPanel3.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 320, -1, -1));
-
-    jTextField4.setFocusable(false);
-    jTextField4.setRequestFocusEnabled(false);
-    jPanel3.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 320, 100, 30));
-
-    jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/jesus/assets/next(1).png"))); // NOI18N
-    jButton13.setBorderPainted(false);
-    jButton13.setContentAreaFilled(false);
-    jPanel3.add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 320, -1, -1));
+    txtQuantity4.setFocusable(false);
+    txtQuantity4.setRequestFocusEnabled(false);
+    jPanel3.add(txtQuantity4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 320, 100, 30));
 
     jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/jesus/assets/car(1).png"))); // NOI18N
     jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, -1, 90));
 
-    jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/jesus/assets/back(1).png"))); // NOI18N
-    jButton14.setBorderPainted(false);
-    jButton14.setContentAreaFilled(false);
-    jPanel3.add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 410, -1, -1));
+    txtQuantity5.setFocusable(false);
+    txtQuantity5.setRequestFocusEnabled(false);
+    jPanel3.add(txtQuantity5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 410, 100, 30));
 
-    jTextField5.setFocusable(false);
-    jTextField5.setRequestFocusEnabled(false);
-    jPanel3.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 410, 100, 30));
+    btnAdd2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/jesus/assets/add(1).png"))); // NOI18N
+    btnAdd2.setBorderPainted(false);
+    btnAdd2.setContentAreaFilled(false);
+    jPanel3.add(btnAdd2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 130, 40, 50));
 
-    jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/jesus/assets/next(1).png"))); // NOI18N
-    jButton15.setBorderPainted(false);
-    jButton15.setContentAreaFilled(false);
-    jPanel3.add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 410, -1, -1));
+    btnSubstract2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/jesus/assets/remove.png"))); // NOI18N
+    btnSubstract2.setBorderPainted(false);
+    btnSubstract2.setContentAreaFilled(false);
+    jPanel3.add(btnSubstract2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, -1, 50));
+
+    btnSubstract3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/jesus/assets/remove.png"))); // NOI18N
+    btnSubstract3.setBorderPainted(false);
+    btnSubstract3.setContentAreaFilled(false);
+    jPanel3.add(btnSubstract3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, -1, 50));
+
+    btnAdd3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/jesus/assets/add(1).png"))); // NOI18N
+    btnAdd3.setBorderPainted(false);
+    btnAdd3.setContentAreaFilled(false);
+    jPanel3.add(btnAdd3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 220, 40, 50));
+
+    btnSubstract4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/jesus/assets/remove.png"))); // NOI18N
+    btnSubstract4.setBorderPainted(false);
+    btnSubstract4.setContentAreaFilled(false);
+    jPanel3.add(btnSubstract4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, -1, 50));
+
+    btnAdd4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/jesus/assets/add(1).png"))); // NOI18N
+    btnAdd4.setBorderPainted(false);
+    btnAdd4.setContentAreaFilled(false);
+    jPanel3.add(btnAdd4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 310, 40, 50));
+
+    btnSubstract5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/jesus/assets/remove.png"))); // NOI18N
+    btnSubstract5.setBorderPainted(false);
+    btnSubstract5.setContentAreaFilled(false);
+    jPanel3.add(btnSubstract5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 400, -1, 50));
+
+    btnAdd5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/jesus/assets/add(1).png"))); // NOI18N
+    btnAdd5.setBorderPainted(false);
+    btnAdd5.setContentAreaFilled(false);
+    jPanel3.add(btnAdd5, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 400, 40, 50));
 
     jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 370, 470));
 
     jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
-    jButton16.setBackground(new java.awt.Color(204, 204, 204));
-    jButton16.setFont(new java.awt.Font("Carlito", 0, 18)); // NOI18N
-    jButton16.setForeground(new java.awt.Color(0, 0, 0));
-    jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/jesus/assets/plus.png"))); // NOI18N
-    jButton16.setText("                             Nuevo vehículo");
-    jButton16.setBorderPainted(false);
-    jButton16.addActionListener(new java.awt.event.ActionListener() {
+    btnNewVehicle.setBackground(new java.awt.Color(204, 204, 204));
+    btnNewVehicle.setFont(new java.awt.Font("Carlito", 0, 18)); // NOI18N
+    btnNewVehicle.setForeground(new java.awt.Color(0, 0, 0));
+    btnNewVehicle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/jesus/assets/plus.png"))); // NOI18N
+    btnNewVehicle.setText("                             Nuevo vehículo");
+    btnNewVehicle.setBorderPainted(false);
+    btnNewVehicle.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
-        jButton16ActionPerformed(evt);
+        btnNewVehicleActionPerformed(evt);
       }
     });
 
-    jButton17.setBackground(new java.awt.Color(20, 175, 113));
-    jButton17.setFont(new java.awt.Font("Carlito", 0, 18)); // NOI18N
-    jButton17.setForeground(new java.awt.Color(255, 255, 255));
-    jButton17.setText("Finalizar Cuenta");
-    jButton17.setBorderPainted(false);
-    jButton17.addActionListener(new java.awt.event.ActionListener() {
+    btnFinishCount.setBackground(new java.awt.Color(20, 175, 113));
+    btnFinishCount.setFont(new java.awt.Font("Carlito", 0, 18)); // NOI18N
+    btnFinishCount.setForeground(new java.awt.Color(255, 255, 255));
+    btnFinishCount.setText("Finalizar Cuenta");
+    btnFinishCount.setBorderPainted(false);
+    btnFinishCount.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
-        jButton17ActionPerformed(evt);
+        btnFinishCountActionPerformed(evt);
       }
     });
 
@@ -233,17 +233,17 @@ public class UserAppForm extends javax.swing.JFrame {
       .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
         .addContainerGap(28, Short.MAX_VALUE)
         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-          .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
-          .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addComponent(btnFinishCount, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(btnNewVehicle, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE))
         .addGap(20, 20, 20))
     );
     jPanel4Layout.setVerticalGroup(
       jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(jPanel4Layout.createSequentialGroup()
         .addContainerGap()
-        .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addComponent(btnNewVehicle, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-        .addComponent(jButton17, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
+        .addComponent(btnFinishCount, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
         .addContainerGap())
     );
 
@@ -263,18 +263,18 @@ public class UserAppForm extends javax.swing.JFrame {
     pack();
   }// </editor-fold>//GEN-END:initComponents
 
-  private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+  private void btnNewVehicleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewVehicleActionPerformed
     // TODO add your handling code here:
-  }//GEN-LAST:event_jButton16ActionPerformed
+  }//GEN-LAST:event_btnNewVehicleActionPerformed
 
-  private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
+  private void btnAddCountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddCountActionPerformed
     // TODO add your handling code here:
-  }//GEN-LAST:event_jButton20ActionPerformed
+  }//GEN-LAST:event_btnAddCountActionPerformed
 
-  private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
+  private void btnFinishCountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFinishCountActionPerformed
 		this.setVisible(false);
     // TODO add your handling code here:
-  }//GEN-LAST:event_jButton17ActionPerformed
+  }//GEN-LAST:event_btnFinishCountActionPerformed
 
 	/**
 	 * @param args the command line arguments
@@ -319,37 +319,37 @@ public class UserAppForm extends javax.swing.JFrame {
 	}
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
-  private javax.swing.JButton jButton10;
-  private javax.swing.JButton jButton11;
-  private javax.swing.JButton jButton12;
-  private javax.swing.JButton jButton13;
-  private javax.swing.JButton jButton14;
-  private javax.swing.JButton jButton15;
-  private javax.swing.JButton jButton16;
-  private javax.swing.JButton jButton17;
-  private javax.swing.JButton jButton18;
-  private javax.swing.JButton jButton19;
-  private javax.swing.JButton jButton20;
-  private javax.swing.JButton jButton21;
-  private javax.swing.JButton jButton22;
-  private javax.swing.JButton jButton6;
-  private javax.swing.JButton jButton7;
-  private javax.swing.JButton jButton8;
-  private javax.swing.JButton jButton9;
-  private javax.swing.JLabel jLabel2;
+  private javax.swing.JButton btnAdd;
+  private javax.swing.JButton btnAdd2;
+  private javax.swing.JButton btnAdd3;
+  private javax.swing.JButton btnAdd4;
+  private javax.swing.JButton btnAdd5;
+  private javax.swing.JButton btnAddCount;
+  private javax.swing.JButton btnCountedSection;
+  private javax.swing.JButton btnCountingSection;
+  private javax.swing.JButton btnFinishCount;
+  private javax.swing.JButton btnMenu;
+  private javax.swing.JButton btnNewVehicle;
+  private javax.swing.JButton btnStatisticsSection;
+  private javax.swing.JButton btnSubstract;
+  private javax.swing.JButton btnSubstract2;
+  private javax.swing.JButton btnSubstract3;
+  private javax.swing.JButton btnSubstract4;
+  private javax.swing.JButton btnSubstract5;
   private javax.swing.JLabel jLabel3;
   private javax.swing.JLabel jLabel4;
   private javax.swing.JLabel jLabel5;
   private javax.swing.JLabel jLabel6;
-  private javax.swing.JLabel jLabel7;
   private javax.swing.JPanel jPanel1;
   private javax.swing.JPanel jPanel2;
   private javax.swing.JPanel jPanel3;
   private javax.swing.JPanel jPanel4;
-  private javax.swing.JTextField jTextField1;
-  private javax.swing.JTextField jTextField2;
-  private javax.swing.JTextField jTextField3;
-  private javax.swing.JTextField jTextField4;
-  private javax.swing.JTextField jTextField5;
+  private javax.swing.JLabel lblMovement;
+  private javax.swing.JLabel lblVehicle;
+  private javax.swing.JTextField txtQuantity;
+  private javax.swing.JTextField txtQuantity2;
+  private javax.swing.JTextField txtQuantity3;
+  private javax.swing.JTextField txtQuantity4;
+  private javax.swing.JTextField txtQuantity5;
   // End of variables declaration//GEN-END:variables
 }
