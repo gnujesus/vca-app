@@ -4,6 +4,14 @@
  */
 package com.jesus.view.new_vehicle_count;
 
+import com.jesus.model.SingletonVehicleCountDAO;
+import com.jesus.utils.SingletonJDBCUtil;
+import javax.swing.JOptionPane;
+import java.sql.SQLException;
+import java.sql.Connection;
+import java.time.LocalDateTime;
+import java.util.Date;
+
 /**
  *
  * @author Juan `Aether` Martínez <jotamartinezd at gmail.com>
@@ -145,8 +153,35 @@ public class NewVehicleFormPageTwo extends javax.swing.JFrame {
   }// </editor-fold>//GEN-END:initComponents
 
   private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
-    // TODO add your handling code here:
-		this.setVisible(false);
+
+
+		NewVehicleFormPageTwo newVehicleForm = new NewVehicleFormPageTwo();
+
+		SingletonJDBCUtil jdbcUtil = SingletonJDBCUtil.getInstance("vca_app", "localhost", "aether", "12345");
+
+		Connection connection = jdbcUtil.getConnection();
+		SingletonVehicleCountDAO vehicleCountDao = SingletonVehicleCountDAO.getInstance(connection);
+
+		int countCode = Integer.valueOf(txtCountCode.getText())	;
+		String countName = txtCountName.getText()	;
+		String startingTime = txtCountStartingTime.getText()	;
+		String finishingTime = txtCountFinishingTime.getText()	;
+		int countInterval = Integer.valueOf(txtCountInterval.getText())	;
+		Date date = txtCountDate.getDate();
+
+
+		try{
+			vehicleCountDao.insert(countCode, countName, countInterval,startingTime, finishingTime, date);
+
+			connection.commit();
+
+			JOptionPane.showMessageDialog(rootPane, "AFORO AGREGADO CORRECTAMENTE");
+
+			this.dispose();
+		} catch(SQLException e){
+			JOptionPane.showMessageDialog(rootPane, "ERROR AL AGREGAR AFORO: " + e);	
+		}
+
   }//GEN-LAST:event_btnCreateActionPerformed
 
 	/**

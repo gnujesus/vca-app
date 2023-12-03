@@ -6,10 +6,17 @@ package com.jesus.view.register;
 
 import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatGitHubIJTheme;
 import com.formdev.flatlaf.themes.FlatMacLightLaf;
+import com.jesus.model.SingletonUserDAO;
+import com.jesus.utils.SingletonJDBCUtil;
 import com.jesus.view.login.LoginForm;
+import java.sql.Connection;
 import java.awt.Button;
 import java.awt.Color;
+import javax.swing.JOptionPane;
 import javax.swing.UIManager;
+import java.sql.SQLException;
+import java.time.LocalDateTime;
+import java.sql.PreparedStatement;
 
 /**
  *
@@ -22,6 +29,7 @@ public class RegisterForm extends javax.swing.JFrame {
 	 */
 	public RegisterForm() {
 		initComponents();
+		LoginForm login = new LoginForm();
 
 		UIManager.put( "Button.arc", 20);
 		UIManager.put("TextComponent.arc", 10);
@@ -181,6 +189,11 @@ public class RegisterForm extends javax.swing.JFrame {
     btnRegister.setFont(new java.awt.Font("Carlito", 1, 18)); // NOI18N
     btnRegister.setForeground(new java.awt.Color(0, 0, 0));
     btnRegister.setText("Register");
+    btnRegister.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnRegisterActionPerformed(evt);
+      }
+    });
     jpnRegisterPane.add(btnRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 450, 170, 40));
 
     txtFirstName.setFont(new java.awt.Font("Carlito", 0, 18)); // NOI18N
@@ -227,6 +240,74 @@ public class RegisterForm extends javax.swing.JFrame {
 		loginFrame.setVisible(true);
     // TODO add your handling code here:
   }//GEN-LAST:event_btnHaveAnAccountActionPerformed
+
+  private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
+    // TODO add your handling code here:
+
+		SingletonJDBCUtil jdbcUtil = SingletonJDBCUtil.getInstance("vca_app", "localhost", "aether", "12345");
+
+		Connection connection = jdbcUtil.getConnection();
+		
+
+		/*
+		LoginForm login = new LoginForm();
+
+		SingletonJDBCUtil jdbcUtil = SingletonJDBCUtil.getInstance("vca_app", "localhost", "aether", "12345");
+		SingletonUserDAO userDao = SingletonUserDAO.getInstance(jdbcUtil.getConnection());
+
+		String firstName = txtFirstName.getText();
+		String lastName = txtLastName.getText();
+		String password = txtPassword.getText();
+		String email = txtEmail.getText();
+		String phoneNumber = txtPhoneNumber.getText();
+
+		try{
+
+			int indice = userDao.insert(firstName, lastName, password, email, phoneNumber);
+
+			if (indice > 0){
+				JOptionPane.showMessageDialog(rootPane, "USUARIO AGREGADO CORRECTAMENTE");
+			}
+
+		} catch(SQLException e){
+			JOptionPane.showMessageDialog(rootPane, "ERROR AL AGREGAR USUARIO: " + e);	
+		}
+
+*/
+		LocalDateTime fa = LocalDateTime.now();
+		String registrosql ="INSERT INTO users (username,first_name,last_name,password,email,backup_email,phone_number,user_type,creation_date) VALUES( ?,  ?,  ?,  ?,  ?,  ?,  ?,  ?,  ?)";
+
+try
+		{
+			PreparedStatement ps;
+			ps = (PreparedStatement) connection.prepareStatement(registrosql);
+			ps.setString(1, null);
+			ps.setString(2, txtFirstName.getText());
+			ps.setString(3, txtLastName.getText());
+			ps.setString(4, txtPassword.getText());
+			ps.setString(5, txtEmail.getText());
+			ps.setString(6, null);
+			ps.setString(7, txtPhoneNumber.getText());
+			ps.setString(8, null);
+			ps.setString(9, fa.toString());
+			boolean indice = ps.execute();
+
+			// Remember to commit
+			connection.commit();
+
+			if (!indice)
+			{
+				JOptionPane.showMessageDialog(jpnWelcomePane, "EL REGISTRO SE REALIZO CORRECTAMENTE");
+			}
+		} catch (SQLException e)
+		{
+			JOptionPane.showMessageDialog(jpnWelcomePane, "ERROR AL AGRGAR DATOS: " + e);
+		}
+
+		
+		
+
+  }//GEN-LAST:event_btnRegisterActionPerformed
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
   private javax.swing.JButton btnHaveAnAccount;

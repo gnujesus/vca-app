@@ -224,7 +224,7 @@ public class AdminDashboardForm extends javax.swing.JFrame {
         btnLogoutActionPerformed(evt);
       }
     });
-    pcLeftMenuCover.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 200, 40));
+    pcLeftMenuCover.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 400, 200, 40));
 
     lblInTransitT.setFont(new java.awt.Font("Caladea", 1, 54)); // NOI18N
     lblInTransitT.setForeground(new java.awt.Color(255, 255, 255));

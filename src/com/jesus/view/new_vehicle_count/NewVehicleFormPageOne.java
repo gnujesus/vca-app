@@ -4,6 +4,12 @@
  */
 package com.jesus.view.new_vehicle_count;
 
+import com.jesus.model.SingletonIntersectionDAO;
+import com.jesus.utils.SingletonJDBCUtil;
+import java.sql.Connection;
+import javax.swing.JOptionPane;
+import java.sql.SQLException;
+
 /**
  *
  * @author Juan `Aether` Martínez <jotamartinezd at gmail.com>
@@ -27,9 +33,9 @@ public class NewVehicleFormPageOne extends javax.swing.JFrame {
   private void initComponents() {
 
     jPanel1 = new javax.swing.JPanel();
-    jTextField1 = new javax.swing.JTextField();
-    jTextField2 = new javax.swing.JTextField();
-    jTextField4 = new javax.swing.JTextField();
+    txtProvince = new javax.swing.JTextField();
+    txtIntersectionName = new javax.swing.JTextField();
+    txtStreet = new javax.swing.JTextField();
     btnNext = new javax.swing.JButton();
     lblProvincia = new javax.swing.JLabel();
     lblIntersectionData1 = new javax.swing.JLabel();
@@ -44,14 +50,14 @@ public class NewVehicleFormPageOne extends javax.swing.JFrame {
     jPanel1.setBackground(new java.awt.Color(255, 255, 255));
     jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-    jTextField1.setForeground(new java.awt.Color(1, 16, 1));
-    jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 350, 30));
+    txtProvince.setForeground(new java.awt.Color(1, 16, 1));
+    jPanel1.add(txtProvince, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 350, 30));
 
-    jTextField2.setForeground(new java.awt.Color(1, 16, 1));
-    jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 350, 30));
+    txtIntersectionName.setForeground(new java.awt.Color(1, 16, 1));
+    jPanel1.add(txtIntersectionName, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 350, 30));
 
-    jTextField4.setForeground(new java.awt.Color(1, 16, 1));
-    jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 350, 30));
+    txtStreet.setForeground(new java.awt.Color(1, 16, 1));
+    jPanel1.add(txtStreet, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 350, 30));
 
     btnNext.setBackground(new java.awt.Color(20, 175, 113));
     btnNext.setFont(new java.awt.Font("Carlito", 0, 18)); // NOI18N
@@ -117,8 +123,31 @@ public class NewVehicleFormPageOne extends javax.swing.JFrame {
     // TODO add your handling code here:
 
 		NewVehicleFormPageTwo newVehicleForm = new NewVehicleFormPageTwo();
-		newVehicleForm.setVisible(true);
-		this.setVisible(false);
+
+		SingletonJDBCUtil jdbcUtil = SingletonJDBCUtil.getInstance("vca_app", "localhost", "aether", "12345");
+
+		Connection connection = jdbcUtil.getConnection();
+		SingletonIntersectionDAO intersectionDAO = SingletonIntersectionDAO.getInstance(connection);
+
+		String intersectionName = txtIntersectionName.getText();
+		String street = txtStreet.getText();
+		String province = txtProvince.getText();
+
+
+		try{
+			intersectionDAO.insert(intersectionName, street, province);
+
+			connection.commit();
+
+		
+			JOptionPane.showMessageDialog(rootPane, "INTERSECCION AGREGADA CORRECTAMENTE");
+
+			NewVehicleFormPageTwo nvtwo = new NewVehicleFormPageTwo();
+			nvtwo.setVisible(true);
+			this.dispose();
+		} catch(SQLException e){
+			JOptionPane.showMessageDialog(rootPane, "ERROR AL AGREGAR INTERSECCION: " + e);	
+		}
   }//GEN-LAST:event_btnNextActionPerformed
 
 	/**
@@ -167,14 +196,14 @@ public class NewVehicleFormPageOne extends javax.swing.JFrame {
   // Variables declaration - do not modify//GEN-BEGIN:variables
   private javax.swing.JButton btnNext;
   private javax.swing.JPanel jPanel1;
-  private javax.swing.JTextField jTextField1;
-  private javax.swing.JTextField jTextField2;
-  private javax.swing.JTextField jTextField4;
   private javax.swing.JLabel lblCalle;
   private javax.swing.JLabel lblInTransitT;
   private javax.swing.JLabel lblInTransitText;
   private javax.swing.JLabel lblIntersectionData1;
   private javax.swing.JLabel lblIntersectionName;
   private javax.swing.JLabel lblProvincia;
+  private javax.swing.JTextField txtIntersectionName;
+  private javax.swing.JTextField txtProvince;
+  private javax.swing.JTextField txtStreet;
   // End of variables declaration//GEN-END:variables
 }
