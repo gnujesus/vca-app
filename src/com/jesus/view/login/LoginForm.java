@@ -7,12 +7,18 @@ package com.jesus.view.login;
 import com.jesus.view.register.*;
 import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatGitHubIJTheme;
 import com.formdev.flatlaf.themes.FlatMacLightLaf;
+import com.jesus.model.SingletonIntersectionDAO;
+import com.jesus.utils.SingletonJDBCUtil;
 import com.jesus.view.admindashboard.AdminDashboardForm;
 import com.jesus.view.components.PieChart;
 import java.awt.Button;
 import java.awt.Color;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
+import java.sql.Statement;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.ResultSet;
 
 /**
  *
@@ -220,9 +226,54 @@ public class LoginForm extends javax.swing.JFrame {
 
 		AdminDashboardForm adminDashboardForm = new AdminDashboardForm();
 
-		this.setVisible(false);
-		adminDashboardForm.setVisible(true);
+		SingletonJDBCUtil jdbcUtil = SingletonJDBCUtil.getInstance("vca_app", "localhost", "aether", "12345");
+
+		Connection connection = jdbcUtil.getConnection();
+		SingletonIntersectionDAO intersectionDAO = SingletonIntersectionDAO.getInstance(connection);
+		
+		validarcampos();
+		String sql = "SELECT * FROM users WHERE email ='" + txtEmail.getText() + "' AND " + "password='" + txtPassword.getText().toString() + "'";
+
+		Statement ps;
+		try
+		{
+
+			ps = (Statement) connection.createStatement();
+			ResultSet rs = ps.executeQuery(sql);
+			if (rs.next())
+			{
+
+				adminDashboardForm.setVisible(true);
+				this.dispose();
+
+			} else
+			{
+
+				JOptionPane.showMessageDialog(rootPane, "Correo o contraseña invalidos ");
+
+			}
+
+		} catch (SQLException e)
+		{
+
+			JOptionPane.showMessageDialog(rootPane, e);
+		}
+
   }//GEN-LAST:event_btnLoginActionPerformed
+
+	private void validarcampos() {
+		if (txtEmail.getText().trim().length() == 0)
+		{
+
+			JOptionPane.showMessageDialog(rootPane, "El campo de correo está vacío");
+
+		} else if (txtPassword.getText().trim().length() == 0)
+		{
+
+			JOptionPane.showMessageDialog(rootPane, "El campo de contraseña está vacío");
+
+		}
+	}	
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
   private javax.swing.JButton btnForgotPassword;

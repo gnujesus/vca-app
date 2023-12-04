@@ -4,6 +4,8 @@
  */
 package com.jesus.view.admindashboard;
 
+import com.jesus.controller.Controller;
+import com.jesus.model.TableLogic;
 import com.jesus.view.components.PieChart;
 import com.jesus.view.login.LoginForm;
 import com.jesus.view.new_vehicle_count.NewVehicleFormPageOne;
@@ -17,6 +19,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
+import javax.swing.table.DefaultTableModel;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
@@ -307,13 +310,13 @@ public class AdminDashboardForm extends javax.swing.JFrame {
 
     tblAforos.setModel(new javax.swing.table.DefaultTableModel(
       new Object [][] {
-        {null, null, null, null},
-        {null, null, null, null},
-        {null, null, null, null},
-        {null, null, null, null}
+        {null, null, null, null, null, null, null, null, null, null, null},
+        {null, null, null, null, null, null, null, null, null, null, null},
+        {null, null, null, null, null, null, null, null, null, null, null},
+        {null, null, null, null, null, null, null, null, null, null, null}
       },
       new String [] {
-        "Nombre", "Aforadores", "Supervisores", "Provincia"
+        "ID", "Nombre", "Código", "Interseccion", "Intérvalo", "Hora de Inicio", "Hora de Fin", "Fecha", "Nodo", "Total", "Promedio"
       }
     ));
     jScrollPane1.setViewportView(tblAforos);
@@ -322,6 +325,11 @@ public class AdminDashboardForm extends javax.swing.JFrame {
     txtSearchBar.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
         txtSearchBarActionPerformed(evt);
+      }
+    });
+    txtSearchBar.addKeyListener(new java.awt.event.KeyAdapter() {
+      public void keyReleased(java.awt.event.KeyEvent evt) {
+        txtSearchBarKeyReleased(evt);
       }
     });
 
@@ -432,6 +440,11 @@ public class AdminDashboardForm extends javax.swing.JFrame {
     newVehicleForm.setVisible(true);
   }//GEN-LAST:event_btnCreateNewAforumActionPerformed
 
+  private void txtSearchBarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSearchBarKeyReleased
+    // TODO add your handling code here:
+		buscarPersonas(txtSearchBar.getText());
+  }//GEN-LAST:event_txtSearchBarKeyReleased
+
 	/**
 	 * @param args the command line arguments
 	 */
@@ -456,9 +469,16 @@ public class AdminDashboardForm extends javax.swing.JFrame {
   private javax.swing.JLabel lblInTransitText;
   private javax.swing.JLabel lblUserOptions;
   private com.jesus.view.components.PanelCover pcLeftMenuCover;
-  private javax.swing.JTable tblAforos;
+  public javax.swing.JTable tblAforos;
   private javax.swing.JLabel txtSearch;
   private javax.swing.JTextField txtSearchBar;
   // End of variables declaration//GEN-END:variables
+
+	private void buscarPersonas(String buscar) {
+		TableLogic tableLogic = new TableLogic();
+
+		DefaultTableModel model = tableLogic.buscarPersonas(buscar);
+		tblAforos.setModel(model);
+	}
 
 }

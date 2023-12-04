@@ -9,6 +9,9 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.sql.PreparedStatement;
+import java.util.ArrayList;
+import java.util.List;
+import java.sql.ResultSet;
 
 /**
  * 
@@ -16,6 +19,9 @@ import java.sql.PreparedStatement;
  */
 public class SingletonUserDAO extends DAO {
 	
+	PreparedStatement ps;
+	ResultSet rs;
+
 	private SingletonUserDAO(Connection connection){
 		super(connection, "users");
 	}
@@ -49,4 +55,70 @@ public class SingletonUserDAO extends DAO {
 			int indice = ps.executeUpdate();
 			return indice;
 	}
+
+	public List seeRegistry(String value) {
+
+		String SQL = "SELECT* from vehicle_count"
+						+ "where count_id||nombre_aforo||count_code||fk_intersections||count_interval||time_start||time_end||total||average like '%" + value + "%'";
+
+		List<Object> data = new ArrayList<>();
+		try
+		{
+
+			ps = this.connection.prepareStatement(SQL);
+			rs = ps.executeQuery();
+
+			while (rs.next())
+			{
+				data.add(rs.getInt(1));
+				data.add(rs.getString(2));
+				data.add(rs.getInt(3));
+				data.add(rs.getInt(4));
+				data.add(rs.getInt(5));
+				data.add(rs.getString(6));
+				data.add(rs.getString(7));
+				data.add(rs.getString(8));
+				data.add(rs.getInt(9));
+				data.add(rs.getInt(10));
+				data.add(rs.getInt(11));
+			}
+		} catch (SQLException ex)
+		{
+			System.out.println("Error al listar los contactos: " + ex);
+		}
+		return data;
+	}
+
+	public List see() {
+
+		String SQL = "select * from vehicle_count";
+
+		List<Object> data = new ArrayList<>();
+		try
+		{
+
+			ps = this.connection.prepareStatement(SQL);
+			rs = ps.executeQuery();
+
+			while (rs.next())
+			{
+				data.add(rs.getInt(1));
+				data.add(rs.getString(2));
+				data.add(rs.getInt(3));
+				data.add(rs.getInt(4));
+				data.add(rs.getInt(5));
+				data.add(rs.getString(6));
+				data.add(rs.getString(7));
+				data.add(rs.getString(8));
+				data.add(rs.getInt(9));
+				data.add(rs.getInt(10));
+				data.add(rs.getInt(11));
+			}
+		} catch (SQLException ex)
+		{
+			System.out.println("Error al listar los contactos: " + ex);
+		}
+		return data;
+	}
+	
 }

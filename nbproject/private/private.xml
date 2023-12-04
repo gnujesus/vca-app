@@ -6,9 +6,14 @@
             <file>file:/home/aether/NetBeansProjects/VCA/src/com/jesus/view/admindashboard/AdminDashboardForm.java</file>
             <file>file:/home/aether/NetBeansProjects/VCA/src/com/jesus/view/new_vehicle_count/NewVehicleFormPageTwo.java</file>
             <file>file:/home/aether/NetBeansProjects/VCA/src/com/jesus/main/Main.java</file>
+            <file>file:/home/aether/NetBeansProjects/VCA/src/com/jesus/model/SingletonUserDAO.java</file>
+            <file>file:/home/aether/NetBeansProjects/VCA/src/com/jesus/view/register/RegisterForm.java</file>
+            <file>file:/home/aether/NetBeansProjects/VCA/src/com/jesus/model/SingletonVehicleCountDAO.java</file>
             <file>file:/home/aether/NetBeansProjects/VCA/src/com/jesus/view/new_vehicle_count/NewVehicleFormPageOne.java</file>
             <file>file:/home/aether/NetBeansProjects/VCA/src/com/jesus/view/login/LoginForm.java</file>
+            <file>file:/home/aether/NetBeansProjects/VCA/src/com/jesus/utils/SingletonJDBCUtil.java</file>
             <file>file:/home/aether/NetBeansProjects/VCA/src/com/jesus/view/userapp/UserAppForm.java</file>
+            <file>file:/home/aether/NetBeansProjects/VCA/src/com/jesus/model/SingletonIntersectionDAO.java</file>
         </group>
     </open-files>
 </project-private>

@@ -38,7 +38,7 @@ public class NewVehicleFormPageTwo extends javax.swing.JFrame {
     txtCountInterval = new javax.swing.JTextField();
     txtCountCode = new javax.swing.JTextField();
     txtCountStartingTime = new javax.swing.JTextField();
-    btnCreate = new javax.swing.JButton();
+    btnCancel = new javax.swing.JButton();
     lblCountInterval = new javax.swing.JLabel();
     lblIntersectionData1 = new javax.swing.JLabel();
     lblCountCode = new javax.swing.JLabel();
@@ -51,6 +51,7 @@ public class NewVehicleFormPageTwo extends javax.swing.JFrame {
     txtCountDate = new com.toedter.calendar.JDateChooser();
     lblInTransitText = new javax.swing.JLabel();
     lblInTransitT = new javax.swing.JLabel();
+    btnCreate1 = new javax.swing.JButton();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
     setResizable(false);
@@ -67,16 +68,16 @@ public class NewVehicleFormPageTwo extends javax.swing.JFrame {
     txtCountStartingTime.setForeground(new java.awt.Color(1, 16, 1));
     jPanel1.add(txtCountStartingTime, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 220, 30));
 
-    btnCreate.setBackground(new java.awt.Color(20, 175, 113));
-    btnCreate.setFont(new java.awt.Font("Carlito", 0, 18)); // NOI18N
-    btnCreate.setForeground(new java.awt.Color(255, 255, 255));
-    btnCreate.setText("Crear");
-    btnCreate.addActionListener(new java.awt.event.ActionListener() {
+    btnCancel.setBackground(new java.awt.Color(20, 175, 113));
+    btnCancel.setFont(new java.awt.Font("Carlito", 0, 18)); // NOI18N
+    btnCancel.setForeground(new java.awt.Color(255, 255, 255));
+    btnCancel.setText("Cancelar");
+    btnCancel.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
-        btnCreateActionPerformed(evt);
+        btnCancelActionPerformed(evt);
       }
     });
-    jPanel1.add(btnCreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 280, 110, 30));
+    jPanel1.add(btnCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 280, 110, 30));
 
     lblCountInterval.setFont(new java.awt.Font("Carlito", 0, 14)); // NOI18N
     lblCountInterval.setForeground(new java.awt.Color(0, 0, 0));
@@ -135,6 +136,17 @@ public class NewVehicleFormPageTwo extends javax.swing.JFrame {
     lblInTransitT.setText("T");
     jPanel1.add(lblInTransitT, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 40, -1));
 
+    btnCreate1.setBackground(new java.awt.Color(20, 175, 113));
+    btnCreate1.setFont(new java.awt.Font("Carlito", 0, 18)); // NOI18N
+    btnCreate1.setForeground(new java.awt.Color(255, 255, 255));
+    btnCreate1.setText("Crear");
+    btnCreate1.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnCreate1ActionPerformed(evt);
+      }
+    });
+    jPanel1.add(btnCreate1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 280, 110, 30));
+
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
     getContentPane().setLayout(layout);
     layout.setHorizontalGroup(
@@ -152,9 +164,12 @@ public class NewVehicleFormPageTwo extends javax.swing.JFrame {
     setLocationRelativeTo(null);
   }// </editor-fold>//GEN-END:initComponents
 
-  private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
+  private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
+		this.dispose();
+  }//GEN-LAST:event_btnCancelActionPerformed
 
-
+  private void btnCreate1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreate1ActionPerformed
+    // TODO add your handling code here:
 		NewVehicleFormPageTwo newVehicleForm = new NewVehicleFormPageTwo();
 
 		SingletonJDBCUtil jdbcUtil = SingletonJDBCUtil.getInstance("vca_app", "localhost", "aether", "12345");
@@ -162,27 +177,27 @@ public class NewVehicleFormPageTwo extends javax.swing.JFrame {
 		Connection connection = jdbcUtil.getConnection();
 		SingletonVehicleCountDAO vehicleCountDao = SingletonVehicleCountDAO.getInstance(connection);
 
-		int countCode = Integer.valueOf(txtCountCode.getText())	;
-		String countName = txtCountName.getText()	;
-		String startingTime = txtCountStartingTime.getText()	;
-		String finishingTime = txtCountFinishingTime.getText()	;
-		int countInterval = Integer.valueOf(txtCountInterval.getText())	;
+		int countCode = Integer.valueOf(txtCountCode.getText());
+		String countName = txtCountName.getText();
+		String startingTime = txtCountStartingTime.getText();
+		String finishingTime = txtCountFinishingTime.getText();
+		int countInterval = Integer.valueOf(txtCountInterval.getText());
 		Date date = txtCountDate.getDate();
 
-
-		try{
-			vehicleCountDao.insert(countCode, countName, countInterval,startingTime, finishingTime, date);
+		try
+		{
+			vehicleCountDao.insert(countCode, countName, countInterval, startingTime, finishingTime, date);
 
 			connection.commit();
 
 			JOptionPane.showMessageDialog(rootPane, "AFORO AGREGADO CORRECTAMENTE");
 
 			this.dispose();
-		} catch(SQLException e){
-			JOptionPane.showMessageDialog(rootPane, "ERROR AL AGREGAR AFORO: " + e);	
+		} catch (SQLException e)
+		{
+			JOptionPane.showMessageDialog(rootPane, "ERROR AL AGREGAR AFORO: " + e);
 		}
-
-  }//GEN-LAST:event_btnCreateActionPerformed
+  }//GEN-LAST:event_btnCreate1ActionPerformed
 
 	/**
 	 * @param args the command line arguments
@@ -230,7 +245,8 @@ public class NewVehicleFormPageTwo extends javax.swing.JFrame {
 	}
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
-  private javax.swing.JButton btnCreate;
+  private javax.swing.JButton btnCancel;
+  private javax.swing.JButton btnCreate1;
   private javax.swing.JPanel jPanel1;
   private javax.swing.JLabel lblCountCode;
   private javax.swing.JLabel lblCountDate;

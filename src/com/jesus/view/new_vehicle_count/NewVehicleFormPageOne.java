@@ -36,13 +36,14 @@ public class NewVehicleFormPageOne extends javax.swing.JFrame {
     txtProvince = new javax.swing.JTextField();
     txtIntersectionName = new javax.swing.JTextField();
     txtStreet = new javax.swing.JTextField();
-    btnNext = new javax.swing.JButton();
+    btnCancel = new javax.swing.JButton();
     lblProvincia = new javax.swing.JLabel();
     lblIntersectionData1 = new javax.swing.JLabel();
     lblIntersectionName = new javax.swing.JLabel();
     lblCalle = new javax.swing.JLabel();
     lblInTransitText = new javax.swing.JLabel();
     lblInTransitT = new javax.swing.JLabel();
+    btnNext1 = new javax.swing.JButton();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
     setResizable(false);
@@ -59,16 +60,16 @@ public class NewVehicleFormPageOne extends javax.swing.JFrame {
     txtStreet.setForeground(new java.awt.Color(1, 16, 1));
     jPanel1.add(txtStreet, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 350, 30));
 
-    btnNext.setBackground(new java.awt.Color(20, 175, 113));
-    btnNext.setFont(new java.awt.Font("Carlito", 0, 18)); // NOI18N
-    btnNext.setForeground(new java.awt.Color(255, 255, 255));
-    btnNext.setText("Siguiente");
-    btnNext.addActionListener(new java.awt.event.ActionListener() {
+    btnCancel.setBackground(new java.awt.Color(20, 175, 113));
+    btnCancel.setFont(new java.awt.Font("Carlito", 0, 18)); // NOI18N
+    btnCancel.setForeground(new java.awt.Color(255, 255, 255));
+    btnCancel.setText("Cancelar");
+    btnCancel.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
-        btnNextActionPerformed(evt);
+        btnCancelActionPerformed(evt);
       }
     });
-    jPanel1.add(btnNext, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 280, 110, 30));
+    jPanel1.add(btnCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 280, 110, 30));
 
     lblProvincia.setFont(new java.awt.Font("Carlito", 0, 14)); // NOI18N
     lblProvincia.setForeground(new java.awt.Color(0, 0, 0));
@@ -102,6 +103,17 @@ public class NewVehicleFormPageOne extends javax.swing.JFrame {
     lblInTransitT.setText("T");
     jPanel1.add(lblInTransitT, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 40, -1));
 
+    btnNext1.setBackground(new java.awt.Color(20, 175, 113));
+    btnNext1.setFont(new java.awt.Font("Carlito", 0, 18)); // NOI18N
+    btnNext1.setForeground(new java.awt.Color(255, 255, 255));
+    btnNext1.setText("Siguiente");
+    btnNext1.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnNext1ActionPerformed(evt);
+      }
+    });
+    jPanel1.add(btnNext1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 280, 110, 30));
+
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
     getContentPane().setLayout(layout);
     layout.setHorizontalGroup(
@@ -119,9 +131,13 @@ public class NewVehicleFormPageOne extends javax.swing.JFrame {
     setLocationRelativeTo(null);
   }// </editor-fold>//GEN-END:initComponents
 
-  private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
+  private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
     // TODO add your handling code here:
+		this.dispose();
+  }//GEN-LAST:event_btnCancelActionPerformed
 
+  private void btnNext1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNext1ActionPerformed
+    // TODO add your handling code here:
 		NewVehicleFormPageTwo newVehicleForm = new NewVehicleFormPageTwo();
 
 		SingletonJDBCUtil jdbcUtil = SingletonJDBCUtil.getInstance("vca_app", "localhost", "aether", "12345");
@@ -133,22 +149,22 @@ public class NewVehicleFormPageOne extends javax.swing.JFrame {
 		String street = txtStreet.getText();
 		String province = txtProvince.getText();
 
-
-		try{
+		try
+		{
 			intersectionDAO.insert(intersectionName, street, province);
 
 			connection.commit();
 
-		
 			JOptionPane.showMessageDialog(rootPane, "INTERSECCION AGREGADA CORRECTAMENTE");
 
 			NewVehicleFormPageTwo nvtwo = new NewVehicleFormPageTwo();
 			nvtwo.setVisible(true);
 			this.dispose();
-		} catch(SQLException e){
-			JOptionPane.showMessageDialog(rootPane, "ERROR AL AGREGAR INTERSECCION: " + e);	
+		} catch (SQLException e)
+		{
+			JOptionPane.showMessageDialog(rootPane, "ERROR AL AGREGAR INTERSECCION: " + e);
 		}
-  }//GEN-LAST:event_btnNextActionPerformed
+  }//GEN-LAST:event_btnNext1ActionPerformed
 
 	/**
 	 * @param args the command line arguments
@@ -194,7 +210,8 @@ public class NewVehicleFormPageOne extends javax.swing.JFrame {
 	}
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
-  private javax.swing.JButton btnNext;
+  private javax.swing.JButton btnCancel;
+  private javax.swing.JButton btnNext1;
   private javax.swing.JPanel jPanel1;
   private javax.swing.JLabel lblCalle;
   private javax.swing.JLabel lblInTransitT;

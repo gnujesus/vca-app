@@ -298,10 +298,15 @@ try
 			if (!indice)
 			{
 				JOptionPane.showMessageDialog(jpnWelcomePane, "EL REGISTRO SE REALIZO CORRECTAMENTE");
+				txtFirstName.setText("");
+				txtLastName.setText("");
+				txtPassword.setText("");
+				txtEmail.setText("");
+				txtPhoneNumber.setText("");
 			}
 		} catch (SQLException e)
 		{
-			JOptionPane.showMessageDialog(jpnWelcomePane, "ERROR AL AGRGAR DATOS: " + e);
+			JOptionPane.showMessageDialog(jpnWelcomePane, "ERROR AL AGREGAR DATOS: " + e);
 		}
 
 		
