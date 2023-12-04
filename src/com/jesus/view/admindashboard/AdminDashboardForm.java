@@ -14,6 +14,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Paint;
+import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -41,6 +42,17 @@ import org.jfree.ui.RectangleInsets;
  */
 public class AdminDashboardForm extends javax.swing.JFrame {
 
+		int util = 0;
+		int mb = 0;
+		int b = 0;
+		int cl = 0;
+		int c2e = 0;
+		int c3e = 0;
+		int c3me = 0;
+		int sn = 0;
+		int ns = 0;
+		int oe = 0;
+		int eo = 0;
 	/**
 	 * Creates new form AdminDashboardForm
 	 */
@@ -48,14 +60,23 @@ public class AdminDashboardForm extends javax.swing.JFrame {
 
 		initComponents();
 	
+
+		addBar();
+		addPie();
+		
+
+	}
+
+	public void addBar(){
+		
 		DefaultCategoryDataset vehicleBarChartDataset = new DefaultCategoryDataset();
-		vehicleBarChartDataset.setValue(3, "util", "");
-		vehicleBarChartDataset.setValue(48, "mb", "");
-		vehicleBarChartDataset.setValue(37, "b", "");
-		vehicleBarChartDataset.setValue(26, "cl", "");
-		vehicleBarChartDataset.setValue(86, "c2e", "");
-		vehicleBarChartDataset.setValue(100, "c3e", "");
-		vehicleBarChartDataset.setValue(16, "c3+e", "");
+		vehicleBarChartDataset.setValue(this.util, "util", "");
+		vehicleBarChartDataset.setValue(this.mb, "mb", "");
+		vehicleBarChartDataset.setValue(this.b, "b", "");
+		vehicleBarChartDataset.setValue(this.cl, "cl", "");
+		vehicleBarChartDataset.setValue(this.c2e, "c2e", "");
+		vehicleBarChartDataset.setValue(this.c3e, "c3e", "");
+		vehicleBarChartDataset.setValue(this.c3me, "c3+e", "");
 		JFreeChart vehicleBarChart = ChartFactory.createBarChart("Vehicle Concurrency", "Vehicles", "Quantity", vehicleBarChartDataset, PlotOrientation.VERTICAL, true, true, false);
 
 		// Applying theme
@@ -81,24 +102,49 @@ public class AdminDashboardForm extends javax.swing.JFrame {
 		// Customize category plot colors
 		vehicleBarChartCategoryPlot.setRangeGridlinePaint(Color.WHITE);
 		vehicleBarChartCategoryPlot.setBackgroundPaint(Color.WHITE);
-		BarRenderer renderer = (BarRenderer) vehicleBarChartCategoryPlot.getRenderer();		
-		renderer.setSeriesPaint(0, new Color(51,201,140));
-		renderer.setSeriesPaint(1, new Color(51,187,201));
-		renderer.setSeriesPaint(2, new Color(51,112,201));
-		renderer.setSeriesPaint(3, new Color(51,112,163));
-		renderer.setSeriesPaint(4, new Color(201,51,189));
-		renderer.setSeriesPaint(5, new Color(201,63,51));
-		renderer.setSeriesPaint(6, new Color(201,138,51));
-		renderer.setSeriesPaint(7, new Color(51,177,113));
+		BarRenderer renderer = (BarRenderer) vehicleBarChartCategoryPlot.getRenderer();
+		renderer.setSeriesPaint(0, new Color(51, 201, 140));
+		renderer.setSeriesPaint(1, new Color(51, 187, 201));
+		renderer.setSeriesPaint(2, new Color(51, 112, 201));
+		renderer.setSeriesPaint(3, new Color(51, 112, 163));
+		renderer.setSeriesPaint(4, new Color(201, 51, 189));
+		renderer.setSeriesPaint(5, new Color(201, 63, 51));
+		renderer.setSeriesPaint(6, new Color(201, 138, 51));
+		renderer.setSeriesPaint(7, new Color(51, 177, 113));
 
 		ChartPanel vehicleBarChartPanel = new ChartPanel(vehicleBarChart);
+		
+		jpnBarChart.removeAll();
+		jpnBarChart.add(vehicleBarChartPanel, BorderLayout.CENTER);
+		jpnBarChart.validate();
+
+	}
+
+	public void addPie(){
+
+
+		// Applying theme
+		StandardChartTheme theme = (StandardChartTheme) org.jfree.chart.StandardChartTheme.createJFreeTheme();
+
+		String fontName = "Lucida Sans";
+		theme.setTitlePaint(Color.decode("#4572a7"));
+		theme.setExtraLargeFont(new Font(fontName, Font.PLAIN, 16)); //title
+		theme.setLargeFont(new Font(fontName, Font.BOLD, 15)); //axis-title
+		theme.setRegularFont(new Font(fontName, Font.PLAIN, 11));
+		theme.setRangeGridlinePaint(Color.decode("#C0C0C0"));
+		theme.setPlotBackgroundPaint(Color.white);
+		theme.setChartBackgroundPaint(Color.white);
+		theme.setGridBandPaint(Color.red);
+		theme.setAxisOffset(new RectangleInsets(0, 0, 0, 0));
+		theme.setBarPainter(new StandardBarPainter());
+		theme.setAxisLabelPaint(Color.decode("#666666"));
 
 		DefaultPieDataset pieDataset = new DefaultPieDataset();
 
-		pieDataset.setValue("Sur-Norte", 2);
-		pieDataset.setValue("Norte-Sur", 5);
-		pieDataset.setValue("Este-Oeste", 9);
-		pieDataset.setValue("Oeste-Este", 8);
+		pieDataset.setValue("Sur-Norte", sn);
+		pieDataset.setValue("Norte-Sur", ns);
+		pieDataset.setValue("Este-Oeste", eo);
+		pieDataset.setValue("Oeste-Este", oe);
 
 		JFreeChart pieChart = ChartFactory.createPieChart("Intersection Concurrency", pieDataset);
 		PiePlot pieChartCategoryPlot = new PiePlot(pieDataset);
@@ -107,13 +153,9 @@ public class AdminDashboardForm extends javax.swing.JFrame {
 
 		ChartPanel barChartPanel = new ChartPanel(pieChart);
 
-		jpnBarChart.removeAll();
-		jpnBarChart.add(vehicleBarChartPanel, BorderLayout.CENTER);
-		jpnBarChart.validate();
 		jpnPieChart.removeAll();
 		jpnPieChart.add(barChartPanel, BorderLayout.CENTER);
 		jpnPieChart.validate();
-
 	}
 
 	/**
@@ -319,6 +361,14 @@ public class AdminDashboardForm extends javax.swing.JFrame {
         "ID", "Nombre", "Código", "Interseccion", "Intérvalo", "Hora de Inicio", "Hora de Fin", "Fecha", "Nodo", "Total", "Promedio"
       }
     ));
+    tblAforos.addMouseListener(new java.awt.event.MouseAdapter() {
+      public void mouseClicked(java.awt.event.MouseEvent evt) {
+        tblAforosMouseClicked(evt);
+      }
+      public void mouseReleased(java.awt.event.MouseEvent evt) {
+        tblAforosMouseReleased(evt);
+      }
+    });
     jScrollPane1.setViewportView(tblAforos);
 
     txtSearchBar.setFont(new java.awt.Font("Carlito", 0, 18)); // NOI18N
@@ -445,6 +495,23 @@ public class AdminDashboardForm extends javax.swing.JFrame {
 		buscarPersonas(txtSearchBar.getText());
   }//GEN-LAST:event_txtSearchBarKeyReleased
 
+  private void tblAforosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblAforosMouseClicked
+    // TODO add your handling code here:
+  }//GEN-LAST:event_tblAforosMouseClicked
+
+  private void tblAforosMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblAforosMouseReleased
+    // TODO add your handling code here:
+
+		try{
+		
+//			handleGraph();
+
+
+		} catch(Exception e){
+			System.out.println("Error" + e);
+		}
+  }//GEN-LAST:event_tblAforosMouseReleased
+
 	/**
 	 * @param args the command line arguments
 	 */
@@ -481,4 +548,89 @@ public class AdminDashboardForm extends javax.swing.JFrame {
 		tblAforos.setModel(model);
 	}
 
+	private void handleGraph(){
+		final int ID_COLUMN_INDEX = 0;
+		final int[] clickedRowID = new int[1];
+		int selectedRow = tblAforos.getSelectedRow();
+		clickedRowID[0] = Integer.parseInt((String) tblAforos.getValueAt(selectedRow, ID_COLUMN_INDEX));
+
+		switch (clickedRowID[0])
+		{
+			case 1:
+				this.util = 10;
+				this.mb = 5;
+				this.b = 0;
+				this.cl = 50;
+				this.c2e = 0;
+				this.c3e = 20;
+				this.c3me = 38;
+				this.sn = 2;
+				this.ns = 5;
+				this.oe = 1;
+				this.eo = 7;
+				addBar();
+				addPie();
+				break;
+			case 2:
+				this.util = 40;
+				this.mb = 28;
+				this.b = 32;
+				this.cl = 15;
+				this.c2e = 55;
+				this.c3e = 18;
+				this.c3me = 12;
+				this.sn = 1;
+				this.ns = 9;
+				this.oe = 10;
+				this.eo = 2;
+				addBar();
+				addPie();
+				break;
+			case 3:
+				this.util = 28;
+				this.mb = 28;
+				this.b = 10;
+				this.cl = 16;
+				this.c2e = 22;
+				this.c3e = 41;
+				this.c3me = 7;
+				this.sn = 5;
+				this.ns = 5;
+				this.oe = 8;
+				this.eo = 1;
+				addBar();
+				addPie();
+				break;
+			case 4:
+				this.util = 12;
+				this.mb = 18;
+				this.b = 55;
+				this.cl = 18;
+				this.c2e = 55;
+				this.c3e = 18;
+				this.c3me = 9;
+				this.sn = 10;
+				this.ns = 21;
+				this.oe = 2;
+				this.eo = 3;
+				addBar();
+				addPie();
+				break;
+			case 5:
+				this.util = 100;
+				this.mb = 251;
+				this.b = 232;
+				this.cl = 298;
+				this.c2e = 100;
+				this.c3e = 231;
+				this.c3me = 98;
+				this.sn = 2;
+				this.ns = 2;
+				this.oe = 19;
+				this.eo = 8;
+				addBar();
+				addPie();
+				break;
+		}
+	}
 }

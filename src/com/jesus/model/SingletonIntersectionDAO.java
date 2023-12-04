@@ -32,7 +32,6 @@ public class SingletonIntersectionDAO extends DAO {
 
 	public int insert(String intersectionName, String street, String province) throws SQLException{
 
-		
 		String SQL = "INSERT INTO intersections (name,street,province,creation_date) VALUES (?,?,?,?)";
 		LocalDateTime fa = LocalDateTime.now();
 			PreparedStatement ps;
@@ -42,6 +41,7 @@ public class SingletonIntersectionDAO extends DAO {
 			ps.setString(3, province);
 			ps.setString(4, fa.toString());
 			int indice = ps.executeUpdate();
+			connection.commit();
 
 			return indice;
 

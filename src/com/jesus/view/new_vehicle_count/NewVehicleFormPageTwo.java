@@ -72,6 +72,7 @@ public class NewVehicleFormPageTwo extends javax.swing.JFrame {
     btnCancel.setFont(new java.awt.Font("Carlito", 0, 18)); // NOI18N
     btnCancel.setForeground(new java.awt.Color(255, 255, 255));
     btnCancel.setText("Cancelar");
+    btnCancel.setBorderPainted(false);
     btnCancel.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
         btnCancelActionPerformed(evt);
@@ -140,6 +141,7 @@ public class NewVehicleFormPageTwo extends javax.swing.JFrame {
     btnCreate1.setFont(new java.awt.Font("Carlito", 0, 18)); // NOI18N
     btnCreate1.setForeground(new java.awt.Color(255, 255, 255));
     btnCreate1.setText("Crear");
+    btnCreate1.setBorderPainted(false);
     btnCreate1.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
         btnCreate1ActionPerformed(evt);
@@ -189,6 +191,7 @@ public class NewVehicleFormPageTwo extends javax.swing.JFrame {
 			vehicleCountDao.insert(countCode, countName, countInterval, startingTime, finishingTime, date);
 
 			connection.commit();
+			connection.close();
 
 			JOptionPane.showMessageDialog(rootPane, "AFORO AGREGADO CORRECTAMENTE");
 
@@ -199,50 +202,6 @@ public class NewVehicleFormPageTwo extends javax.swing.JFrame {
 		}
   }//GEN-LAST:event_btnCreate1ActionPerformed
 
-	/**
-	 * @param args the command line arguments
-	 */
-	public static void main(String args[]) {
-		/* Set the Nimbus look and feel */
-		//<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-		/* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-		 */
-		try
-		{
-			for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels())
-			{
-				if ("Nimbus".equals(info.getName()))
-				{
-					javax.swing.UIManager.setLookAndFeel(info.getClassName());
-					break;
-				}
-			}
-		} catch (ClassNotFoundException ex)
-		{
-			java.util.logging.Logger.getLogger(NewVehicleFormPageTwo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-		} catch (InstantiationException ex)
-		{
-			java.util.logging.Logger.getLogger(NewVehicleFormPageTwo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-		} catch (IllegalAccessException ex)
-		{
-			java.util.logging.Logger.getLogger(NewVehicleFormPageTwo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-		} catch (javax.swing.UnsupportedLookAndFeelException ex)
-		{
-			java.util.logging.Logger.getLogger(NewVehicleFormPageTwo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-		}
-		//</editor-fold>
-		//</editor-fold>
-		//</editor-fold>
-		//</editor-fold>
-
-		/* Create and display the form */
-		java.awt.EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				new NewVehicleFormPageTwo().setVisible(true);
-			}
-		});
-	}
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
   private javax.swing.JButton btnCancel;

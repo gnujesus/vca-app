@@ -64,6 +64,7 @@ public class NewVehicleFormPageOne extends javax.swing.JFrame {
     btnCancel.setFont(new java.awt.Font("Carlito", 0, 18)); // NOI18N
     btnCancel.setForeground(new java.awt.Color(255, 255, 255));
     btnCancel.setText("Cancelar");
+    btnCancel.setBorderPainted(false);
     btnCancel.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
         btnCancelActionPerformed(evt);
@@ -107,6 +108,7 @@ public class NewVehicleFormPageOne extends javax.swing.JFrame {
     btnNext1.setFont(new java.awt.Font("Carlito", 0, 18)); // NOI18N
     btnNext1.setForeground(new java.awt.Color(255, 255, 255));
     btnNext1.setText("Siguiente");
+    btnNext1.setBorderPainted(false);
     btnNext1.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
         btnNext1ActionPerformed(evt);
@@ -154,11 +156,11 @@ public class NewVehicleFormPageOne extends javax.swing.JFrame {
 			intersectionDAO.insert(intersectionName, street, province);
 
 			connection.commit();
+			connection.close();
 
 			JOptionPane.showMessageDialog(rootPane, "INTERSECCION AGREGADA CORRECTAMENTE");
 
-			NewVehicleFormPageTwo nvtwo = new NewVehicleFormPageTwo();
-			nvtwo.setVisible(true);
+			newVehicleForm.setVisible(true);
 			this.dispose();
 		} catch (SQLException e)
 		{
@@ -166,48 +168,7 @@ public class NewVehicleFormPageOne extends javax.swing.JFrame {
 		}
   }//GEN-LAST:event_btnNext1ActionPerformed
 
-	/**
-	 * @param args the command line arguments
-	 */
-	public static void main(String args[]) {
-		/* Set the Nimbus look and feel */
-		//<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-		/* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-		 */
-		try
-		{
-			for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels())
-			{
-				if ("Nimbus".equals(info.getName()))
-				{
-					javax.swing.UIManager.setLookAndFeel(info.getClassName());
-					break;
-				}
-			}
-		} catch (ClassNotFoundException ex)
-		{
-			java.util.logging.Logger.getLogger(NewVehicleFormPageOne.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-		} catch (InstantiationException ex)
-		{
-			java.util.logging.Logger.getLogger(NewVehicleFormPageOne.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-		} catch (IllegalAccessException ex)
-		{
-			java.util.logging.Logger.getLogger(NewVehicleFormPageOne.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-		} catch (javax.swing.UnsupportedLookAndFeelException ex)
-		{
-			java.util.logging.Logger.getLogger(NewVehicleFormPageOne.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-		}
-		//</editor-fold>
-		//</editor-fold>
 
-		/* Create and display the form */
-		java.awt.EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				new NewVehicleFormPageOne().setVisible(true);
-			}
-		});
-	}
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
   private javax.swing.JButton btnCancel;
