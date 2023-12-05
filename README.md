@@ -14,7 +14,7 @@ Not that the driver for MySQL is on a `.zip` file. Extract it and import the `.j
 ## Usage
 ### Log in & Registration
 In order to enter to the application, you must first have a user, which has to be created in the registration view.
-![image](https://github.com/juandma0/vca-app/assets/107089453/dd2234f3-42d8-47bf-ac23-895c07d2a1ec)
+![image](https://github.com/juandma0/vca-app/assets/107089453/dd2234f3-42d8-47bf-ac23-895c07d2a1ec)<br>
 This view is accessed by pressing the option `Register new user` on the `login` view that appears when the application starts.
 
 ### Admin Dashboard
@@ -49,10 +49,10 @@ The Table Live Preview provides a live preview of the currently on-going vehicle
 There are two bottom above the top right corner of the table: the `Refresh` button, and the `Nuevo aforo` button. The `Refresh` button updates the data on the table, in case it doesn't update automatically. the `Nuevo aforo` button creates a new vehicle count.
 
 When the `Nuevo aforo` button is pressed, a view is displayed over the Admin Dashboard:
-![image](https://github.com/juandma0/vca-app/assets/107089453/e3921505-b520-4340-ace5-c684ef6b0dd2)
+![image](https://github.com/juandma0/vca-app/assets/107089453/e3921505-b520-4340-ace5-c684ef6b0dd2)<br>
 This view allows the user to create a new intersection in which the traffic count will be taking place. This view allows you to specify the `name`, `street` and `province` of the intersection.
 When the `Siguiente` button is pressed, another view gets displayed on the screen:
-![image](https://github.com/juandma0/vca-app/assets/107089453/869cd36c-1133-48dc-99c5-68355dad4d93)
+![image](https://github.com/juandma0/vca-app/assets/107089453/869cd36c-1133-48dc-99c5-68355dad4d93)<br>
 This view allows the admin to specify the main information necessary to create a new vehicle count:
 - Vehicle Count Code: What is the desired code for the vehicle count
 - Starting Time: When will the count start
